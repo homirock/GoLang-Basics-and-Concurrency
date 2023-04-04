@@ -5,14 +5,19 @@ import (
 )
 
 func oddFunc(odd chan int){
-	
-	fmt.Println("odd:",<-odd)
+	for value:=range odd{ 
+		
+		fmt.Println("odd:",value)
+	}
 	
 }
 
 func evenFunc(even chan int){
 	
-		fmt.Println("even:",<-even)
+	for value:=range even{ 
+		
+		fmt.Println("even:",value)
+	}
 		
 }
 
@@ -25,10 +30,11 @@ func main(){
 
 	for i := 1; i <= 10; i++ {
 		if i%2==0{
-			odd <- i
-		}else{
 			even <- i
+		}else{
+			odd <- i
 		}
+		
 	
 }
 }
