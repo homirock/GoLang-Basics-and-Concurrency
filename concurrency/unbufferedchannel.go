@@ -7,7 +7,7 @@ func channelfun(message chan string,message1 string){
 	fmt.Println("started")
 	message <- message1
 	fmt.Println("finished")
-	//wont work bcz when we send message to the ch, the receiver should be ready.
+	//wont work bcz when we send message to the ch, the receiver should be ready. if receiver not there it will wait to have a receiver.
 	// receive:= <-message
 	
 	// fmt.Println(receive)
