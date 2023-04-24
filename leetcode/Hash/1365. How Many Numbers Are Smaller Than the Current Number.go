@@ -31,6 +31,6 @@ func smallerNumbersThanCurrent(nums []int) []int {
 	return arr
 }
 func main() {
-	fmt.Println(smallerNumbersThanCurrent([]int{1, 2, 3, 4, 5}))
+	fmt.Println(smallerNumbersThanCurrent([]int{1, 2, 3, 4, 5,8}))
 
 }
