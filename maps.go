@@ -12,4 +12,8 @@ func main(){
 	fmt.Println(len(map1))
 	delete(map1,"name")
 	fmt.Printf("map2:%v",map1)
+//check the key exists in map1 
+if value,ok:=map1["email"];ok{
+	fmt.Println("value-->",value)
+}
 }
