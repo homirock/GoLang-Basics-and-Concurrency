@@ -44,5 +44,4 @@ func isHappy(n int) bool {
 		}
 	}
 
-	return false
 }
