@@ -8,12 +8,36 @@ type Node struct {
 }
 
 type LinkedList struct {
-	head   *Node
-	length int
+	head *Node
 }
 
-func main() {
-	list := LinkedList{nil, 0}
+func (l *LinkedList) insert(val int) {
+	newNode := &Node{data: val, next: nil}
 
-	fmt.Println(list)
+	if l.head == nil {
+		l.head = newNode
+		return
+	}
+	current := l.head
+	for current.next != nil {
+		current = current.next
+	}
+	current.next = newNode
+}
+
+
+func (l *LinkedList) display() {
+	current := l.head
+	for current != nil {
+		fmt.Printf("->%v", current.data)
+        current=current.next
+	}
+}
+
+func main(){
+    ll:=new(LinkedList)
+    ll.insert(10)
+    ll.insert(20)
+    ll.insert(30)
+    ll.display()
 }
