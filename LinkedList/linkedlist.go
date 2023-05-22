@@ -11,7 +11,7 @@ type LinkedList struct {
 	head *Node
 }
 
-func (l *LinkedList) insert(val int) {
+func (l *LinkedList) insertAtEnd(val int) {
 	newNode := &Node{data: val, next: nil}
 
 	if l.head == nil {
@@ -25,6 +25,18 @@ func (l *LinkedList) insert(val int) {
 	current.next = newNode
 }
 
+func(l *LinkedList) insertAtStart(val int){
+    newNode:=&Node{data:val}
+    if l.head == nil {
+        l.head=newNode
+        return
+    }else{
+        newNode.next = l.head
+        l.head=newNode
+    }
+
+}
+
 
 func (l *LinkedList) display() {
 	current := l.head
@@ -36,8 +48,9 @@ func (l *LinkedList) display() {
 
 func main(){
     ll:=new(LinkedList)
-    ll.insert(10)
-    ll.insert(20)
-    ll.insert(30)
+    ll.insertAtEnd(10)
+    ll.insertAtEnd(20)
+    ll.insertAtEnd(30)
+    ll.insertAtStart(40)
     ll.display()
 }
