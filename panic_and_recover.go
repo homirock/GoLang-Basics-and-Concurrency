@@ -2,8 +2,15 @@ package main
 
 import "fmt"
 
+func handlePanic(){
+	if err := recover(); err != nil{
+		fmt.Println("Recover:",err)
+	}
+}
+
 func callName(name *string, age *string) {
 	defer fmt.Println("starting of callName")
+	defer handlePanic()
 	if name == nil {
 		panic("Name is not mentioned")
 	}
@@ -19,4 +26,5 @@ func main() {
 	name := "partha"
 
 	callName(&name, nil)
+	fmt.Println("successfully terminate main routine")
 }
