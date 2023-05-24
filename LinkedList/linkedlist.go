@@ -37,6 +37,26 @@ func(l *LinkedList) insertAtStart(val int){
 
 }
 
+func(l *LinkedList) inserAtMiddle(val int,position int){
+    newNode := &Node{data:val,next:nil}
+    if position==0 {
+        newNode.next = l.head
+        l.head=newNode
+        return
+    }else{
+    current:=l.head
+    for i:=0;i<position-1;i++{
+        current=current.next
+    }
+    if current!=nil{
+        newNode.next = current.next
+        current.next = newNode
+    }else{
+        fmt.Printf("out of bounce")
+    }
+}
+}
+
 
 func (l *LinkedList) display() {
 	current := l.head
@@ -52,5 +72,6 @@ func main(){
     ll.insertAtEnd(20)
     ll.insertAtEnd(30)
     ll.insertAtStart(40)
+    ll.inserAtMiddle(5,2)
     ll.display()
 }
