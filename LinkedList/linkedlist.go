@@ -57,6 +57,24 @@ func(l *LinkedList) inserAtMiddle(val int,position int){
 }
 }
 
+func (l *LinkedList) Remove(val int){
+
+    if l.head.data==val{
+        l.head=l.head.next
+        return
+    }
+    prev:=l.head
+    current:=l.head.next
+    for current.next!=nil{
+        prev=current
+        current=current.next
+        
+    }
+    if current.data==val{
+        prev.next=nil
+    }
+}
+
 
 func (l *LinkedList) display() {
 	current := l.head
@@ -73,5 +91,11 @@ func main(){
     ll.insertAtEnd(30)
     ll.insertAtStart(40)
     ll.inserAtMiddle(5,2)
+    ll.display()
+    fmt.Println()
+    //remove from first
+    ll.Remove(40)
+    //remove from last
+    ll.Remove(30)
     ll.display()
 }
